@@ -147,9 +147,9 @@ export default function Page() {
             >
               <use href="/sprite.svg#flir" />
             </svg>
-            {`FLIR. `}
+            {`FLIR.`}
           </Badge>
-          Over the course of several years, I've explored various facets of
+          {` `}Over the course of several years, I've explored various facets of
           life, embracing new interests while letting others fade away. This
           journey has been a profound opportunity for self-discovery and
           personal growth, for which I am deeply grateful.
