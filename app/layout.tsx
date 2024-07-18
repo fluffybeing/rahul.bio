@@ -13,10 +13,10 @@ export const metadata: Metadata = {
     default: 'Rahul Ranjan',
     template: '%s | RR',
   },
-  description: 'Software engineer, writer, and sporty.',
+  description: 'Musing over the twists and turns of life.',
   openGraph: {
     title: 'Rahul Ranjan',
-    description: 'Software engineer, writer, and sporty.',
+    description: 'Musing over the twists and turns of life.',
     url: 'https://rahul.bio',
     siteName: 'Rahul Ranjan',
     locale: 'en_US',
