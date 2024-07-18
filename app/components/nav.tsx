@@ -10,8 +10,8 @@ const navItems = {
   '/blog': {
     name: 'blog',
   },
-  '/guestbook': {
-    name: 'guestbook',
+  '/photobook': {
+    name: 'photobook',
   },
 };
 

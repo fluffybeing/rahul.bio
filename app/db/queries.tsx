@@ -48,17 +48,17 @@ export async function getViewsCount(): Promise<
   `;
 }
 
-export const getLeeYouTubeSubs = cache(
+export const getYouTubeSubs = cache(
   async () => {
     let response = await yt.channels.list({
-      id: ['UC4PHctm6cFb_tVSRG3i9fBw'],
+      id: ['UCZMli3czZnd1uoc1ShTouQw'],
       part: ['statistics'],
     });
 
     let channel = response.data.items![0];
     return Number(channel?.statistics?.subscriberCount).toLocaleString();
   },
-  ['fluffystream-youtube-subs'],
+  ['rr-youtube-subs'],
   {
     revalidate: 3600,
   }

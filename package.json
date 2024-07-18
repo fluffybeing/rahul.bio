@@ -5,7 +5,8 @@
     "build": "npm run setup && next build",
     "build-only": "next build",
     "start": "next start",
-    "setup": "node ./setup.mjs"
+    "setup": "node ./setup.mjs",
+    "update-sprite": "svg-sprite -s --symbol-dest public --symbol-sprite sprite.svg public/icons/*.svg"
   },
   "dependencies": {
     "@codesandbox/sandpack-react": "2.12.0",
@@ -28,6 +29,7 @@
     "react-dom": "18.2.0",
     "react-tweet": "3.2.0",
     "sugar-high": "^0.6.1",
+    "svg-sprite": "^2.0.4",
     "tailwindcss": "^3.4.6",
     "typescript": "5.3.3"
   },

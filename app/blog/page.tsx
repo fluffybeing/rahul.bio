@@ -1,12 +1,12 @@
+import { getBlogPosts } from 'app/db/blog';
+import { getViewsCount } from 'app/db/queries';
 import Link from 'next/link';
 import { Suspense } from 'react';
 import ViewCounter from './view-counter';
-import { getViewsCount } from 'app/db/queries';
-import { getBlogPosts } from 'app/db/blog';
 
 export const metadata = {
   title: 'Blog',
-  description: 'Read my thoughts on software development, design, and more.',
+  description: 'Read my thoughts on anything and everything!',
 };
 
 export default function BlogPage() {

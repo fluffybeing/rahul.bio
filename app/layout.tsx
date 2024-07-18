@@ -1,11 +1,11 @@
-import './global.css';
-import type { Metadata } from 'next';
-import { GeistSans } from 'geist/font/sans';
-import { GeistMono } from 'geist/font/mono';
-import { Navbar } from './components/nav';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { GeistMono } from 'geist/font/mono';
+import { GeistSans } from 'geist/font/sans';
+import type { Metadata } from 'next';
 import { SandpackCSS } from './blog/[slug]/sandpack';
+import { Navbar } from './components/nav';
+import './global.css';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://rahul.bio'),
@@ -13,10 +13,10 @@ export const metadata: Metadata = {
     default: 'Rahul Ranjan',
     template: '%s | RR',
   },
-  description: 'Developer, writer, and creator.',
+  description: 'Software engineer, writer, and sporty.',
   openGraph: {
     title: 'Rahul Ranjan',
-    description: 'Developer, writer, and creator.',
+    description: 'Software engineer, writer, and sporty.',
     url: 'https://rahul.bio',
     siteName: 'Rahul Ranjan',
     locale: 'en_US',

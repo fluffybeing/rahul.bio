@@ -1,6 +1,6 @@
+import dotenv from 'dotenv';
 import { promises as fs } from 'fs';
 import path from 'path';
-import dotenv from 'dotenv';
 
 const template = `---
 title: 'Hello, World!'
