@@ -6,7 +6,7 @@ import type { Metadata } from 'next';
 import { unstable_noStore as noStore } from 'next/cache';
 import { notFound } from 'next/navigation';
 import { Suspense, cache } from 'react';
-import ViewCounter from '../view-counter';
+import ViewCounter from '../../components/view-counter';
 
 export async function generateMetadata({
   params,

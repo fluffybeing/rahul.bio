@@ -2,7 +2,7 @@ import { getBlogPosts } from 'app/db/blog';
 import { getViewsCount } from 'app/db/queries';
 import Link from 'next/link';
 import { Suspense } from 'react';
-import ViewCounter from './view-counter';
+import ViewCounter from '../components/view-counter';
 
 export const metadata = {
   title: 'Blog',

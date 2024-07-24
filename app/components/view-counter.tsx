@@ -1,4 +1,4 @@
-export default function ViewCounter({
+export default function ViewCounterComponent({
   slug,
   allViews,
 }: {

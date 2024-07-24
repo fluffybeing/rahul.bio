@@ -1,5 +1,5 @@
-import type { Config } from 'tailwindcss';
 import typography from '@tailwindcss/typography';
+import type { Config } from 'tailwindcss';
 
 export default {
   content: ['./app/**/*.{ts,tsx}', './content/**/*.mdx', './public/**/*.svg'],
@@ -22,5 +22,5 @@ export default {
   future: {
     hoverOnlyWhenSupported: true,
   },
-  plugins: [typography],
+  plugins: [typography, require('@tailwindcss/aspect-ratio')],
 } satisfies Config;

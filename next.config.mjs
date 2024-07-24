@@ -5,8 +5,11 @@ export const sql = postgres(process.env.POSTGRES_URL, {
 });
 
 const nextConfig = {
+  images: {
+    domains: ['res.cloudinary.com'],
+  },
   experimental: {
-    ppr: true,
+    ppr: false,
   },
   logging: {
     fetches: {

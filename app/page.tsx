@@ -1,5 +1,5 @@
 import avatar from 'app/avatar.jpg';
-import ViewCounter from 'app/blog/view-counter';
+import ViewCounter from 'app/components/view-counter';
 import { getViewsCount, getYouTubeSubs } from 'app/db/queries';
 import { PreloadResources } from 'app/preload';
 import { unstable_noStore as noStore } from 'next/cache';
@@ -133,7 +133,7 @@ export default function Page() {
       </h1>
       <div className="prose prose-neutral dark:prose-invert">
         <p>
-          {`I'm an iOS engineer based in Stockholm where I `}
+          {`I'm an iOS engineer based in Stockholm; where I `}
           <Link href="/work">work</Link>
           {` at `}
           <span className="not-prose"></span>
@@ -222,8 +222,9 @@ export default function Page() {
         <p>
           At this juncture, I aim to share my ideas, opinions, and learnings
           through this blog, continuously refining them along the way.
-          Simultaneously, I’m channeling my photography skills to capture
-          moments and create videos for my YouTube channel.
+          Simultaneously, I’m channeling my {` `}
+          <Link href="/photobook">photography</Link> skills to capture moments
+          and create videos for my YouTube channel.
         </p>
       </div>
       <div className="my-8 flex w-full flex-col space-x-0 space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">

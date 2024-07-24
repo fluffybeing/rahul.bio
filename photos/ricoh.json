@@ -1,0 +1,83 @@
+{
+  "title": "RICOH",
+  "content": "photos captured with my cherished RICOH GRIII.",
+  "publishedAt": "2024-07-24",
+
+  "images": [
+    {
+      "id": 1,
+      "imageSrc": "https://res.cloudinary.com/dg1urly6s/image/upload/v1721822693/R0001720_ongc33.jpg",
+      "title": "Beautiful Work"
+    },
+    {
+      "id": 2,
+      "imageSrc": "https://res.cloudinary.com/dg1urly6s/image/upload/v1721822359/R0001592_ayujdg.jpg",
+      "title": "Beautiful Work"
+    },
+    {
+      "id": 3,
+      "imageSrc": "https://res.cloudinary.com/dg1urly6s/image/upload/v1721823165/R0002349_x248no.jpg",
+      "title": "Beautiful Work"
+    },
+    {
+      "id": 4,
+      "imageSrc": "https://res.cloudinary.com/dg1urly6s/image/upload/v1721823052/R0002298_exzhza.jpg",
+      "title": "Beautiful Work"
+    },
+    {
+      "id": 5,
+      "imageSrc": "https://res.cloudinary.com/dg1urly6s/image/upload/v1721823714/R0002198_xvn7yp.jpg",
+      "title": "Beautiful Work"
+    },
+    {
+      "id": 6,
+      "imageSrc": "https://res.cloudinary.com/dg1urly6s/image/upload/v1721821512/R0001383_ronexq.jpg",
+      "title": "Beautiful Work"
+    },
+    {
+      "id": 7,
+      "imageSrc": "https://res.cloudinary.com/dg1urly6s/image/upload/v1721821442/R0001375_tyf1ol.jpg",
+      "title": "Beautiful Work"
+    },
+    {
+      "id": 8,
+      "imageSrc": "https://res.cloudinary.com/dg1urly6s/image/upload/v1721820790/R0001148_kcx1qd.jpg",
+      "title": "Beautiful Work"
+    },
+    {
+      "id": 9,
+      "imageSrc": "https://res.cloudinary.com/dg1urly6s/image/upload/v1721821320/R0001308_bwyjhm.jpg",
+      "title": "Beautiful Work"
+    },
+    {
+      "id": 10,
+      "imageSrc": "https://res.cloudinary.com/dg1urly6s/image/upload/v1721822153/R0001569_o08axl.jpg",
+      "title": "Beautiful Work"
+    },
+    {
+      "id": 11,
+      "imageSrc": "https://res.cloudinary.com/dg1urly6s/image/upload/v1721824035/R0002261_nri79u.jpg",
+      "title": "Beautiful Work"
+    },
+    {
+      "id": 12,
+      "imageSrc": "https://res.cloudinary.com/dg1urly6s/image/upload/v1721822331/R0001591_lanthp.jpg",
+      "title": "Beautiful Work"
+    },
+    {
+      "id": 13,
+      "imageSrc": "https://res.cloudinary.com/dg1urly6s/image/upload/v1721822269/R0001528_nuynya.jpg",
+      "title": "Beautiful Work"
+    },
+    {
+      "id": 14,
+      "imageSrc": "https://res.cloudinary.com/dg1urly6s/image/upload/v1721821955/R0001488_hfwgbf.jpg",
+      "title": "Beautiful Work"
+    },
+    {
+      "id": 15,
+      "imageSrc": "https://res.cloudinary.com/dg1urly6s/image/upload/v1721820866/R0001119_hipnbw.jpg",
+      "title": "Beautiful Work"
+    }
+  ]
+}
