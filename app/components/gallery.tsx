@@ -4,6 +4,7 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 import { AiOutlineExpandAlt } from 'react-icons/ai';
 import Lightbox from 'yet-another-react-lightbox';
+import Zoom from 'yet-another-react-lightbox/plugins/zoom';
 import 'yet-another-react-lightbox/styles.css';
 import NextJsImage from './nextjsImage';
 
@@ -31,11 +32,11 @@ export default function Gallery({ images }: { images: Image[] }) {
 
   return (
     <div className="flex flex-col">
-      <div className="grid grid-cols-1 grid-rows-4 md:grid-rows-3 md:grid-cols-3 gap-4 my-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-8">
         {images.map((x, index) => {
           return (
-            <div className="group relative h-60">
-              <div className="">
+            <div className="group relative">
+              <div className="w-full aspect-w-1 aspect-h-1 overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
                 <Image
                   key={index}
                   src={x.imageSrc}
@@ -46,7 +47,7 @@ export default function Gallery({ images }: { images: Image[] }) {
                   className="rounded-lg object-cover"
                 />
                 <div
-                  className="bg-black opacity-0 group-hover:opacity-75 absolute inset-0 flex items-center justify-center transition-all duration-300 ease-in-out"
+                  className="flex items-center justify-center opacity-0 group-hover:opacity-75 absolute inset-0 bg-black transition-all duration-300 ease-in-out"
                   onClick={() => {
                     setIndex(index);
                   }}
@@ -66,6 +67,7 @@ export default function Gallery({ images }: { images: Image[] }) {
         close={() => setIndex(-1)}
         slides={slides}
         render={{ slide: NextJsImage }}
+        plugins={[Zoom]}
       />
     </div>
   );
