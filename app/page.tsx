@@ -8,9 +8,9 @@ import Link from 'next/link';
 import ios from 'public/images/home/iOS.jpg';
 import maggie from 'public/images/home/maggie.jpg';
 import motorbike from 'public/images/home/motorbike.jpg';
-import beach from 'public/images/home/photography.jpg';
 import running from 'public/images/home/running.jpg';
 import skiing from 'public/images/home/skiing.jpg';
+import skydiving from 'public/images/home/skydiving.jpg';
 import { Suspense } from 'react';
 
 function Badge(props) {
@@ -189,8 +189,8 @@ export default function Page() {
         </div>
         <div className="relative row-span-2">
           <Image
-            alt="Me running on a treadmill"
-            src={running}
+            alt="Picture of Portugal beach"
+            src={skydiving}
             fill
             sizes="(max-width: 768px) 213px, 33vw"
             priority
@@ -209,8 +209,8 @@ export default function Page() {
         </div>
         <div className="relative h-40">
           <Image
-            alt="I love tigers"
-            src={beach}
+            alt="running near the beach"
+            src={running}
             fill
             sizes="(max-width: 768px) 213px, 33vw"
             priority
