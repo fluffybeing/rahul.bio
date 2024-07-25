@@ -85,7 +85,7 @@ function ChannelLink({ img, link, name }) {
 async function Subs({ name }: { name: string }) {
   noStore();
   let subscribers;
-  if (name === '@RR') {
+  if (name === '@fluffystream') {
     subscribers = await getYouTubeSubs();
   }
 
@@ -230,7 +230,7 @@ export default function Page() {
       <div className="my-8 flex w-full flex-col space-x-0 space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
         <ChannelLink
           img={avatar}
-          name="@RR"
+          name="@fluffystream"
           link="https://www.youtube.com/@fluffystream"
         />
       </div>
