@@ -7,6 +7,7 @@ import {
 } from 'next/cache';
 import { sql } from './postgres';
 
+// https://googleapis.dev/nodejs/googleapis/latest/youtube/index.html
 const yt = youtube({
   version: 'v3',
   auth: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, '\n'), // Replace with your actual API key
