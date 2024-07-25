@@ -1,10 +1,10 @@
-import Link from 'next/link';
-import Image from 'next/image';
 import { MDXRemote } from 'next-mdx-remote/rsc';
-import { TweetComponent } from './tweet';
-import { highlight } from 'sugar-high';
+import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
+import { highlight } from 'sugar-high';
 import { LiveCode } from './sandpack';
+import { TweetComponent } from './tweet';
 
 function Table({ data }) {
   let headers = data.headers.map((header, index) => (
@@ -47,7 +47,11 @@ function CustomLink(props) {
 }
 
 function RoundedImage(props) {
-  return <Image alt={props.alt} className="rounded-lg" {...props} />;
+  return (
+    <div className="flex justify-center">
+      <Image alt={props.alt} className="rounded-lg" {...props} />
+    </div>
+  );
 }
 
 function Callout(props) {
