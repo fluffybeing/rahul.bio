@@ -45,10 +45,6 @@ html {
   cursor: pointer;
 }
 
-a {
-  @apply dark:text-lime-600 hover:dark:text-lime-400;
-}
-
 .anchor:hover {
   @apply visible;
 }

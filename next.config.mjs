@@ -6,7 +6,13 @@ export const sql = postgres(process.env.POSTGRES_URL, {
 
 const nextConfig = {
   images: {
-    domains: ['res.cloudinary.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+        pathname: '/**', // Allow any path
+      },
+    ],
   },
   experimental: {
     ppr: false,

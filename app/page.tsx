@@ -85,7 +85,7 @@ function ChannelLink({ img, link, name }) {
 async function Subs({ name }: { name: string }) {
   noStore();
   let subscribers;
-  if (name === '@fluffystream') {
+  if (name === '@RR') {
     subscribers = await getYouTubeSubs();
   }
 
