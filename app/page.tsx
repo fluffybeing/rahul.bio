@@ -5,12 +5,6 @@ import { PreloadResources } from 'app/preload';
 import { unstable_noStore as noStore } from 'next/cache';
 import Image from 'next/image';
 import Link from 'next/link';
-import ios from 'public/images/home/iOS.jpg';
-import maggie from 'public/images/home/maggie.jpg';
-import motorbike from 'public/images/home/motorbike.jpg';
-import running from 'public/images/home/running.jpg';
-import skiing from 'public/images/home/skiing.jpg';
-import skydiving from 'public/images/home/skydiving.jpg';
 import { Suspense } from 'react';
 
 function Badge(props) {
@@ -156,73 +150,11 @@ export default function Page() {
         </p>
         <p>Currently I enjoy: 🏃🏽‍➡️ 🚴🏽 ⛷️ ✍🏽 📚 📸 🏸.</p>
       </div>
-      <div className="grid grid-cols-2 grid-rows-4 sm:grid-rows-3 sm:grid-cols-3 gap-4 my-8">
-        <div className="relative h-40">
-          <Image
-            alt="me trying to build the apps"
-            src={ios}
-            fill
-            sizes="(max-width: 768px) 213px, 33vw"
-            priority
-            className="rounded-lg object-cover"
-          />
-        </div>
-        <div className="relative sm:row-span-2 row-span-1">
-          <Image
-            alt="Me trying to pose on my motorbike"
-            src={motorbike}
-            fill
-            sizes="(max-width: 768px) 213px, 33vw"
-            priority
-            className="rounded-lg object-cover object-top sm:object-center"
-          />
-        </div>
-        <div className="relative">
-          <Image
-            alt="Me trying to learn to learn how to ski"
-            src={skiing}
-            fill
-            sizes="(max-width: 768px) 213px, 33vw"
-            priority
-            className="rounded-lg object-cover"
-          />
-        </div>
-        <div className="relative row-span-2">
-          <Image
-            alt="Picture of Portugal beach"
-            src={skydiving}
-            fill
-            sizes="(max-width: 768px) 213px, 33vw"
-            priority
-            className="rounded-lg object-cover sm:object-center"
-          />
-        </div>
-        <div className="relative row-span-2">
-          <Image
-            alt="My cutest partner in all crimes"
-            src={maggie}
-            fill
-            sizes="(max-width: 768px) 213px, 33vw"
-            priority
-            className="rounded-lg object-cover"
-          />
-        </div>
-        <div className="relative h-40">
-          <Image
-            alt="running near the beach"
-            src={running}
-            fill
-            sizes="(max-width: 768px) 213px, 33vw"
-            priority
-            className="rounded-lg object-cover"
-          />
-        </div>
-      </div>
+
       <div className="prose prose-neutral dark:prose-invert">
         <p>
-          At this juncture, I aim to share my ideas, opinions, and learnings
-          through this blog, continuously refining them along the way.
-          Simultaneously, I’m channeling my {` `}
+          I love sharing ideas, opinions, learnings and continuously refining
+          them along the way. Simultaneously, I’m channeling my {` `}
           <Link href="/photobook">photography</Link> skills to capture moments
           and create videos for my YouTube channel.
         </p>
