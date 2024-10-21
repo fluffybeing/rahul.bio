@@ -6,8 +6,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-geist-sans)'],
-        mono: ['var(--font-geist-mono)'],
+        sans: ['var(--font-open-sans)'],
+        mono: ['var(--font-open-sans)'],
       },
       typography: {
         quoteless: {

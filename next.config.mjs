@@ -52,11 +52,11 @@ const nextConfig = {
 const ContentSecurityPolicy = `
     default-src 'self' vercel.live;
     script-src 'self' 'unsafe-eval' 'unsafe-inline' cdn.vercel-insights.com vercel.live va.vercel-scripts.com;
-    style-src 'self' 'unsafe-inline';
+    style-src * 'unsafe-inline';
     img-src * blob: data:;
     media-src 'none';
     connect-src *;
-    font-src 'self' data:;
+    font-src * data:;
     frame-src 'self' *.codesandbox.io vercel.live;
 `;
 

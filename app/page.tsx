@@ -159,7 +159,8 @@ export default function Page() {
       <div className="prose prose-neutral dark:prose-invert">
         <p>
           If you liked what I do and want to say 👋,
-          <Link href="mailto:rahul.rrixe@gmail.com"> email</Link> me.
+          {` `}
+          <Link href="mailto:rahul.rrixe@gmail.com">email</Link> me.
         </p>
       </div>
 

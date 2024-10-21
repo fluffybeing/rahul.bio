@@ -1,8 +1,7 @@
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import { GeistMono } from 'geist/font/mono';
-import { GeistSans } from 'geist/font/sans';
 import type { Metadata } from 'next';
+import { Open_Sans } from 'next/font/google';
 import { SandpackCSS } from './blog/[slug]/sandpack';
 import { Navbar } from './components/nav';
 import './global.css';
@@ -43,6 +42,12 @@ export const metadata: Metadata = {
   },
 };
 
+const openSans = Open_Sans({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-open-sans',
+});
+
 const cx = (...classes) => classes.filter(Boolean).join(' ');
 
 export default function RootLayout({
@@ -54,9 +59,8 @@ export default function RootLayout({
     <html
       lang="en"
       className={cx(
-        'text-black bg-white dark:text-white dark:bg-[#111010]',
-        GeistSans.variable,
-        GeistMono.variable
+        'text-black bg-white dark:text-emerald-100 dark:bg-black',
+        openSans.variable
       )}
     >
       <head>
