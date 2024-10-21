@@ -123,38 +123,28 @@ export default function Page() {
     <section>
       <PreloadResources />
       <h1 className="mb-8 text-2xl font-medium tracking-tighter">
-        hej, I'm Rahul 👋
+        Hi 👋, I'm Rahul!
       </h1>
       <div className="prose prose-neutral dark:prose-invert">
+        A curious guy living in Stockholm who loves to challenge myself in every
+        way possible. I value honesty highly and strive to be a person people
+        feel safe with and who spreads good energies and is always there for
+        people around me.
         <p>
-          {`I'm an iOS engineer based in Stockholm; where I `}
-          <Link href="/work">work</Link>
-          {` at `}
-          <span className="not-prose"></span>
-          <Badge href="https://www.flir.eu/">
-            <svg
-              width="15"
-              height="15"
-              role="img"
-              aria-label="React logo"
-              className="!mr-1"
-            >
-              <use href="/sprite.svg#flir" />
-            </svg>
-            {`FLIR.`}
-          </Badge>
-          {` `}Over the course of several years, I've explored various facets of
-          life, embracing new interests while letting others fade away. This
-          journey has been a profound opportunity for self-discovery and
-          personal growth, for which I am deeply grateful.
+          Over the course of last several years, I've explored various spectrum
+          of life, embracing each experiences (not all have been nice). This
+          journey has been intresting, for which I am deeply grateful.
         </p>
-        <p>Currently I enjoy: 🏃🏽‍➡️ 🚴🏽 ⛷️ ✍🏽 📚 📸 🏸.</p>
+        <p>
+          Currently I am focussing on these activities: 🏃🏽‍➡️ 🚴🏽 ⛷️ ✍🏽 📚 📸 🏸.
+          If you are into any of these ping me!
+        </p>
       </div>
 
       <div className="prose prose-neutral dark:prose-invert">
         <p>
-          I love sharing ideas, opinions, learnings and continuously refining
-          them along the way. Simultaneously, I’m channeling my {` `}
+          I enjoy sharing ideas, opinions, learnings and continuously refining
+          them along the way. At the moment, I’m also channeling my {` `}
           <Link href="/photobook">photography</Link> skills to capture moments
           and create videos for my YouTube channel.
         </p>
@@ -168,33 +158,11 @@ export default function Page() {
       </div>
       <div className="prose prose-neutral dark:prose-invert">
         <p>
-          I also wish to highlight some of the services that have subtly yet
-          significantly enriched my life.
+          If you liked what I do and want to say 👋,
+          <Link href="mailto:rahul.rrixe@gmail.com"> email</Link> me.
         </p>
       </div>
-      <div className="my-8 flex h-14 w-full flex-row space-x-2 overflow-x-auto">
-        <div className="flex items-center justify-between rounded border border-neutral-200 bg-neutral-50 px-3 py-4 dark:border-neutral-700 dark:bg-neutral-700">
-          <a href="https://ibkr.com/referral/rahul119">
-            <svg width="70" height="25" role="img" aria-label="IBKR logo">
-              <use href="/sprite.svg#ibkr" />
-            </svg>
-          </a>
-        </div>
-        <div className="flex items-center justify-between rounded border border-neutral-200 bg-neutral-50 px-3 py-4 dark:border-neutral-700 dark:bg-neutral-700">
-          <a href="https://www.hedvig.com/se-en/forever/2GEKPM">
-            <svg width="70" height="20" role="img" aria-label="hedvig logo">
-              <use href="/sprite.svg#hedvig" />
-            </svg>
-          </a>
-        </div>
-        <div className="flex items-center justify-between rounded border border-neutral-200 bg-neutral-50 px-3 py-4 dark:border-neutral-700 dark:bg-neutral-700">
-          <a href="https://www.dropbox.com/referrals/AADGxXIOT9uA_wk5l_PZxWRD5Je1EZ97JVc?src=global9">
-            <svg width="70" height="30" role="img" aria-label="dropbox logo">
-              <use href="/sprite.svg#dropbox" />
-            </svg>
-          </a>
-        </div>
-      </div>
+
       <ul className="font-sm mt-8 flex flex-col space-x-0 space-y-2 text-neutral-600 md:flex-row md:space-x-4 md:space-y-0 dark:text-neutral-300">
         <li>
           <a
