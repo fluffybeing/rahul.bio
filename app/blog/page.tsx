@@ -36,9 +36,7 @@ export default function BlogPage() {
           >
             <div className="w-full flex flex-col text-neutral-900 dark:text-neutral-100">
               <p className="tracking-tight">{post.metadata.title}</p>
-              {/* <p className="text-xs">
-                <ArticleTags tags={post.metadata.tags} />
-              </p> */}
+              <ArticleTags tags={post.metadata.tags} />
             </div>
             <div className="flex justify-between items-center tracking-tight max-w-[480px]">
               <Suspense fallback={<p className="h-5" />}>

@@ -21,10 +21,10 @@ export function ArticleTags({ tags }: ArticleTagsProps) {
     typeof tags === 'string' ? tags.split(',').map((t) => t.trim()) : tags;
 
   return (
-    <div className="flex items-center justify-center">
+    <div className="my-1 text-xs flex items-center space-x-2 justify-left">
       {tagArray.map((tag, i) => (
-        <span key={i} className="">
-          {tag}
+        <span key={i} className="text-emerald-100">
+          #{tag.toLowerCase()}
         </span>
       ))}
     </div>

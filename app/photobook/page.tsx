@@ -17,7 +17,7 @@ export default function PhotoPage() {
   return (
     <section>
       <h1 className="font-medium text-2xl mb-8 tracking-tighter">
-        explore my collection of memories
+        explore my memories
       </h1>
       {allPhotos
         .sort((a, b) => {

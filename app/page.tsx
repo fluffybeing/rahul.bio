@@ -126,27 +126,24 @@ export default function Page() {
         Hi 👋, I'm Rahul!
       </h1>
       <div className="prose prose-neutral dark:prose-invert">
-        A curious guy living in Stockholm who loves to challenge myself in every
-        way possible. I value honesty highly and strive to be a person people
-        feel safe with and who spreads good energies and is always there for
-        people around me.
         <p>
-          Over the course of last several years, I've explored various spectrum
-          of life, embracing each experiences (not all have been nice). This
-          journey has been intresting, for which I am deeply grateful.
+          A curious guy living in Stockholm who loves to challenge myself in
+          every way possible. I value honesty highly and strive to be a person
+          people feel safe with and who spreads good energies and is always
+          there for people around me.
         </p>
         <p>
-          Currently I am focussing on these activities: 🏃🏽‍➡️ 🚴🏽 ⛷️ ✍🏽 📚 📸 🏸.
-          If you are into any of these ping me!
+          I do a lot of different activities timet to time but at the moment I
+          am focussing on these: 🏃🏽‍➡️ 🚴🏽 ⛷️ ✍🏽 📚 📸 🏸. If you are into any of
+          these ping me. Maybe we can go 🤲.
         </p>
-      </div>
 
-      <div className="prose prose-neutral dark:prose-invert">
         <p>
-          I enjoy sharing ideas, opinions, learnings and continuously refining
-          them along the way. At the moment, I’m also channeling my {` `}
+          I am here because I enjoy sharing ideas, opinions, learnings and
+          continuously refining them along the way. So, here goes, currently I’m
+          channeling my {` `}
           <Link href="/photobook">photography</Link> skills to capture moments
-          and create videos for my YouTube channel.
+          and share on YouTube.
         </p>
       </div>
       <div className="my-8 flex w-full flex-col space-x-0 space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
@@ -164,21 +161,21 @@ export default function Page() {
         </p>
       </div>
 
-      <ul className="font-sm mt-8 flex flex-col space-x-0 space-y-2 text-neutral-600 md:flex-row md:space-x-4 md:space-y-0 dark:text-neutral-300">
+      <ul className="font-sm mt-8 flex flex-col space-x-0 space-y-2 md:flex-row md:space-x-4 md:space-y-0 dark:text-emerald-100">
         <li>
           <a
-            className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
+            className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-white"
             rel="noopener noreferrer"
             target="_blank"
             href="https://twitter.com/fluffybeing"
           >
             <ArrowIcon />
-            <p className="ml-2 h-7">follow me</p>
+            <p className="ml-2 h-7">twitter</p>
           </a>
         </li>
         <li>
           <a
-            className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
+            className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-white"
             rel="noopener noreferrer"
             target="_blank"
             href="https://www.linkedin.com/in/fluffybeing/"
@@ -189,7 +186,7 @@ export default function Page() {
         </li>
         <li>
           <a
-            className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
+            className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-white"
             rel="noopener noreferrer"
             target="_blank"
             href="https://www.strava.com/athletes/12576125"
