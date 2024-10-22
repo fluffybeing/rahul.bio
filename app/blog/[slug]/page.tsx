@@ -112,7 +112,7 @@ async function Views({ slug }: { slug: string }) {
   return <ViewCounter allViews={views} slug={slug} />;
 }
 
-export function TenPointSystem({ point }) {
+function TenPointSystem({ point }: { point: string }) {
   const writingProgressMap = new Map<string, string>([
     ['0', 'TITLE ONLY'],
     ['1', 'TITLE AND NOTE TO SELF'],
