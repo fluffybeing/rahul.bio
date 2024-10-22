@@ -130,9 +130,9 @@ function TenPointSystem({ point }: { point: string }) {
   return (
     <div className="my-8 w-full group text-sm rounded-md border border-neutral-200 bg-neutral-50 px-3 py-4 dark:border-neutral-700 dark:bg-neutral-800">
       <div className="flex flex-col justify-between">
-        <div className="flex flex-row space-x-2 text-white">
-          <div className="w-20 my-2 rounded-lg border-opacity-40 dark:bg-neutral-600 text-center font-bold">
-            {point} / 10
+        <div className="flex flex-row items-center space-x-3 text-white">
+          <div className="w-20 my-2 text-center font-bold rounded-lg border-opacity-40 dark:bg-neutral-600">
+            <span>{point} / 10</span>
           </div>
           <div className="my-2">{writingProgressMap.get(point)}</div>
         </div>
