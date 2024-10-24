@@ -122,28 +122,25 @@ export default function Page() {
   return (
     <section>
       <PreloadResources />
-      <h1 className="mb-8 text-2xl font-medium tracking-tighter">
-        Hi 👋, I'm Rahul!
-      </h1>
-      <div className="prose prose-neutral dark:prose-invert">
+      <h1 className="mb-8 text-2xl font-medium">Hi 👋, I'm Rahul!</h1>
+      <div className="prose prose-neutral tracking-tighter dark:prose-invert">
         <p>
           A curious guy living in Stockholm who loves to challenge myself in
-          every way possible. I value honesty highly and strive to be a person
-          people feel safe with and who spreads good energies and is always
-          there for people around me.
+          every possible way. I highly value honesty and strive to be someone
+          people feel safe with, spreading good energy and always being there
+          for those around me.
         </p>
         <p>
-          I do a lot of different activities timet to time but at the moment I
-          am focussing on these: 🏃🏽‍➡️ 🚴🏽 ⛷️ ✍🏽 📚 📸 🏸. If you are into any of
-          these ping me. Maybe we can go 🤲.
+          I like a lot of different activities from time to time but at the
+          moment I am focussing on these: 🏃🏽‍➡️ 🚴🏽 ⛷️ ✍🏽 📚 📸 🏸. If you are
+          into any of these ping me. Maybe we can do it 🤝.
         </p>
-
         <p>
-          I am here because I enjoy sharing ideas, opinions, learnings and
-          continuously refining them along the way. So, here goes, currently I’m
-          channeling my {` `}
+          I enjoy sharing ideas, opinions, learnings and continuously refining
+          them along the way and so, I am here. Also, I am currently trying
+          channelise my {` `}
           <Link href="/photobook">photography</Link> skills to capture moments
-          and share on YouTube.
+          and share it on YouTube.
         </p>
       </div>
       <div className="my-8 flex w-full flex-col space-x-0 space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">

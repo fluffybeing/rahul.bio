@@ -2,7 +2,7 @@ export default function Page() {
   return (
     <section>
       <h1 className="font-medium text-2xl mb-8 tracking-tighter">my work</h1>
-      <p className="prose prose-neutral dark:prose-invert">
+      <p className="prose prose-neutral tracking-tighter dark:prose-invert">
         Since I pressed the button on keyboard to play{' '}
         <a
           rel="noopener noreferrer"

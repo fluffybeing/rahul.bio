@@ -34,18 +34,20 @@ export default function BlogPage() {
             className="flex flex-col space-y-1 mb-4"
             href={`/blog/${post.slug}`}
           >
-            <div className="w-full flex flex-col text-neutral-900 dark:text-neutral-100">
-              <p className="tracking-tight">{post.metadata.title}</p>
+            <div className="flex flex-col text-neutral-900 dark:text-neutral-100 max-w-[540px]">
+              <p className="text-wrap:pretty">{post.metadata.title}</p>
               <ArticleTags tags={post.metadata.tags} />
             </div>
-            <div className="flex justify-between items-center tracking-tight max-w-[480px]">
+            <div className="flex justify-between items-center tracking-tight max-w-[540px]">
               <Suspense fallback={<p className="h-5" />}>
                 <p className="text-sm text-neutral-600 dark:text-neutral-400">
                   {formatDate(post.metadata.publishedAt)}
                 </p>
               </Suspense>
               <Suspense fallback={<p className="h-5" />}>
-                <Views slug={post.slug} />
+                <p className="text-sm">
+                  <Views slug={post.slug} />
+                </p>
               </Suspense>
             </div>
           </Link>

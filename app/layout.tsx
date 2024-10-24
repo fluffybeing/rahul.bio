@@ -1,7 +1,7 @@
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata } from 'next';
-import { Open_Sans } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import { SandpackCSS } from './blog/[slug]/sandpack';
 import { Navbar } from './components/nav';
 import './global.css';
@@ -42,10 +42,10 @@ export const metadata: Metadata = {
   },
 };
 
-const openSans = Open_Sans({
+const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-open-sans',
+  variable: '--font-inter',
 });
 
 const cx = (...classes) => classes.filter(Boolean).join(' ');
@@ -60,7 +60,7 @@ export default function RootLayout({
       lang="en"
       className={cx(
         'text-black bg-white dark:text-emerald-100 dark:bg-zinc-950',
-        openSans.variable
+        inter.variable
       )}
     >
       <head>
