@@ -131,16 +131,17 @@ export default function Page() {
           for those around me.
         </p>
         <p>
-          I like a lot of different activities from time to time but at the
-          moment I am focussing on these: 🏃🏽‍➡️ 🚴🏽 ⛷️ ✍🏽 📚 📸 🏸. If you are
-          into any of these ping me. Maybe we can do it 🤝.
+          I have a diverse range of interests that I indulge in from time to
+          time, but currently, I am focusing on these activities: 🏃🏽‍➡️ 🚴🏽 ⛷️ ✍🏽
+          📚 📸 🏸. If you share any of these passions, feel free to reach out.
+          Perhaps we can enjoy them together 🤝.
         </p>
         <p>
-          I enjoy sharing ideas, opinions, learnings and continuously refining
-          them along the way and so, I am here. Also, I am currently trying
-          channelise my {` `}
+          I take pleasure in sharing ideas, opinions, and learnings,
+          continuously refining them along the way, which is why I am here.
+          Additionally, I am currently channeling my {` `}
           <Link href="/photobook">photography</Link> skills to capture moments
-          and share it on YouTube.
+          and share them on YouTube.
         </p>
       </div>
       <div className="my-8 flex w-full flex-col space-x-0 space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
