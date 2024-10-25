@@ -123,7 +123,7 @@ export default function Page() {
     <section>
       <PreloadResources />
       <h1 className="mb-8 text-2xl font-medium">Hi 👋, I'm Rahul!</h1>
-      <div className="prose prose-neutral tracking-tighter dark:prose-invert">
+      <div className="prose prose-neutral dark:prose-invert">
         <p>
           A curious guy living in Stockholm who loves to challenge myself in
           every possible way. I highly value honesty and strive to be someone
