@@ -12,7 +12,9 @@ import ViewCounter from '../../components/view-counter';
 export async function generateMetadata({
   params,
 }): Promise<Metadata | undefined> {
-  let post = getBlogPosts().find((post) => post.slug === params.slug);
+  const awaitedParams = await params;
+
+  let post = getBlogPosts().find((post) => post.slug === awaitedParams.slug);
   if (!post) {
     return;
   }
@@ -51,8 +53,9 @@ export async function generateMetadata({
   };
 }
 
-export default function Blog({ params }) {
-  let post = getBlogPosts().find((post) => post.slug === params.slug);
+export default async function Blog({ params }) {
+  const awaitedParams = await params;
+  let post = getBlogPosts().find((post) => post.slug === awaitedParams.slug);
 
   if (!post) {
     notFound();
@@ -88,9 +91,9 @@ export default function Blog({ params }) {
       <ArticleTags tags={post.metadata.tags} />
       <div className="flex justify-between items-center mt-2 mb-8 text-sm max-w-[650px]">
         <Suspense fallback={<p className="h-5" />}>
-          <p className="text-sm text-neutral-600 dark:text-neutral-400">
+          <div className="text-sm text-neutral-600 dark:text-neutral-400">
             {formatDate(post.metadata.publishedAt)}
-          </p>
+          </div>
         </Suspense>
         <Suspense fallback={<p className="h-5" />}>
           <Views slug={post.slug} />
@@ -128,22 +131,22 @@ function TenPointSystem({ point }: { point: string }) {
   ]);
 
   return (
-    <div className="my-8 w-full group text-sm rounded-md border border-neutral-200 bg-neutral-50 px-3 py-4 dark:border-neutral-700 dark:bg-neutral-800">
-      <div className="flex flex-col justify-between">
-        <div className="flex flex-row items-center space-x-3 text-white">
-          <div className="w-20 my-2 text-center font-bold rounded-lg border-opacity-40 dark:bg-neutral-600">
-            <span>{point} / 10</span>
-          </div>
-          <div className="my-2">{writingProgressMap.get(point)}</div>
+    <div className="my-8 w-full group text-sm rounded-md border px-4 py-2 dark:border-neutral-700 dark:bg-neutral-800">
+      <div className="flex flex-row items-center space-x-3 text-white">
+        <div className="w-20 my-0 text-center font-bold rounded-lg border-opacity-40 dark:bg-neutral-600">
+          <span>{point} / 10</span>
         </div>
-        <a
-          href="https://nickyoder.com/perfectionism/"
-          rel="noopener noreferrer"
-          target="_blank"
-          className="transistion-all dark:hover:text-neutral-200"
-        >
-          10-Point article system
-        </a>
+        <div className="flex flex-col justify-between">
+          <div className="my-2">{writingProgressMap.get(point)}</div>
+          <a
+            href="https://nickyoder.com/perfectionism/"
+            rel="noopener noreferrer"
+            target="_blank"
+            className="transistion-all underline text-emerald-300 dark:hover:text-neutral-200"
+          >
+            10-Point article system
+          </a>
+        </div>
       </div>
     </div>
   );

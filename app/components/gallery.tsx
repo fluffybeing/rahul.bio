@@ -35,7 +35,7 @@ export default function Gallery({ images }: { images: Image[] }) {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-8">
         {images.map((x, index) => {
           return (
-            <div className="group relative">
+            <div className="group relative" key={x.id}>
               <div className="w-full aspect-w-1 aspect-h-1 overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
                 <Image
                   key={index}
@@ -52,9 +52,9 @@ export default function Gallery({ images }: { images: Image[] }) {
                     setIndex(index);
                   }}
                 >
-                  <p className="text-white">
+                  <div className="text-white">
                     <AiOutlineExpandAlt className="text-5xl border w-12 h-12 bg-neutral-500 hover:bg-white hover:text-black p-3 cursor-pointer rounded-full" />
-                  </p>
+                  </div>
                 </div>
               </div>
             </div>

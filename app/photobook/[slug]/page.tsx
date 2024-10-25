@@ -12,8 +12,9 @@ export const metadata = {
   description: 'Photo gallery through out years!',
 };
 
-export default function AlbumPage({ params }) {
-  let post = getPhotoPosts().find((post) => post.slug === params.slug);
+export default async function AlbumPage({ params }) {
+  const awaitedParams = await params;
+  let post = getPhotoPosts().find((post) => post.slug === awaitedParams.slug);
 
   if (!post) {
     notFound();

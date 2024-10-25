@@ -33,10 +33,10 @@ export default function PhotoPage() {
             href={`/photobook/${post.slug}`}
           >
             <div className="w-full flex flex-col">
-              <p className="prose prose-neutral text-neutral-900 dark:text-neutral-100 tracking-tight">
+              <div className="prose prose-neutral text-neutral-900 dark:text-neutral-100 tracking-tight">
                 {post.title}
-              </p>
-              <p className="text-sm">{post.content}</p>
+              </div>
+              <div className="text-sm">{post.content}</div>
               <div className="grid grid-cols-5 sm:grid-cols-8 gap-4 my-4">
                 {post.images.slice(0, 5).map((image: ImageType) => (
                   <div className="relative h-20">
