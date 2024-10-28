@@ -113,7 +113,7 @@ export default function Page() {
           I have a diverse range of interests that I indulge in from time to
           time, but currently, I am focusing on these activities: 🏃🏽‍➡️ 🚴🏽 ⛷️ ✍🏽
           📚 📸 🏸. If you share any of these passions, feel free to reach out.
-          Perhaps we can enjoy them together 🤝.
+          Perhaps we can enjoy them together 🤝 or discuss about it.
         </p>
         <p>
           I take pleasure in sharing ideas, opinions, and learnings,
@@ -133,7 +133,7 @@ export default function Page() {
       </div> */}
       <div className="prose prose-neutral dark:prose-invert">
         <p>
-          If you liked what I do and want to say 👋, feel free to
+          If you liked what I do and want to say 👋,
           {` `}
           <Link href="mailto:rahul.rrixe@gmail.com">email</Link> me.
         </p>

@@ -39,7 +39,7 @@ export default function PhotoPage() {
               <div className="text-sm">{post.content}</div>
               <div className="grid grid-cols-5 sm:grid-cols-8 gap-4 my-4">
                 {post.images.slice(0, 5).map((image: ImageType) => (
-                  <div className="relative h-20">
+                  <div className="relative h-20" key={image.id}>
                     <Image
                       key={image.id}
                       src={image.imageSrc}

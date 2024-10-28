@@ -11,7 +11,7 @@ const navItems = {
     name: 'whois',
   },
   '/photobook': {
-    name: 'photobook',
+    name: 'photos',
   },
 };
 
