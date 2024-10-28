@@ -1,4 +1,3 @@
-import avatar from 'app/avatar.jpg';
 import ViewCounter from 'app/components/view-counter';
 import { getViewsCount, getYouTubeSubs } from 'app/db/queries';
 import { PreloadResources } from 'app/preload';
@@ -102,19 +101,20 @@ export default function Page() {
       <h1 className="font-medium text-2xl mb-8 tracking-tighter">
         Hi 👋, I'm Rahul!
       </h1>
-      <div className="prose prose-neutral dark:prose-invert">
-        <p>
+      <div className="prose prose-neutral tracking-tighter dark:prose-invert max-w-[600px]">
+        <div>
           A curious guy living in Stockholm who loves to challenge myself in
           every possible way. I highly value honesty and strive to be someone
           people feel safe with, spreading good energy and always being there
           for those around me.
-        </p>
-        <p>
+        </div>
+        <div>
           I have a diverse range of interests that I indulge in from time to
           time, but currently, I am focusing on these activities: 🏃🏽‍➡️ 🚴🏽 ⛷️ ✍🏽
           📚 📸 🏸. If you share any of these passions, feel free to reach out.
           Perhaps we can enjoy them together 🤝 or discuss about it.
-        </p>
+        </div>
+
         <p>
           I take pleasure in sharing ideas, opinions, and learnings,
           continuously refining them along the way, which is why I am here.
@@ -124,13 +124,6 @@ export default function Page() {
           <Link href="https://www.youtube.com/@RR63stream">YouTube </Link>.
         </p>
       </div>
-      {/* <div className="flex my-8 mr-4">
-        <ChannelLink
-          img={avatar}
-          name="@RR63"
-          link="https://www.youtube.com/@RR63stream"
-        />
-      </div> */}
       <div className="prose prose-neutral dark:prose-invert">
         <p>
           If you liked what I do and want to say 👋,
