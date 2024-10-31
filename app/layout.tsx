@@ -1,7 +1,7 @@
 import { GoogleTagManager } from '@next/third-parties/google';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Inter, Roboto_Mono } from 'next/font/google';
 import { SandpackCSS } from './blog/[slug]/sandpack';
 import { Navbar } from './components/nav';
 import './global.css';
@@ -48,6 +48,12 @@ const inter = Inter({
   variable: '--font-inter',
 });
 
+const robotoMono = Roboto_Mono({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-roboto-mono',
+});
+
 const cx = (...classes) => classes.filter(Boolean).join(' ');
 
 export default function RootLayout({
@@ -60,7 +66,8 @@ export default function RootLayout({
       lang="en"
       className={cx(
         'text-black bg-white dark:text-emerald-100 dark:bg-zinc-950',
-        inter.variable
+        inter.variable,
+        robotoMono.variable
       )}
     >
       <head>

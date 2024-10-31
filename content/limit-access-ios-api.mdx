@@ -1,0 +1,150 @@
+---
+title: 'Hidden quirks in iOS PhotoKit limit access'
+publishedAt: '2024-10-31'
+summary: 'Exploring all edge cases of limit access API'
+tags: iOS
+point: 8
+---
+
+Apple introduced [limited access](https://developer.apple.com/documentation/photokit/delivering_an_enhanced_privacy_experience_in_your_photos_app) for the photo library in iOS 14,
+along with other privacy enhancements. I appreciate all these changes, and the APIs seem straightforward when
+implementing them from scratch but this post primarily covers some interesting cases that arises when your app is migrating
+and falls into the [photo & video](https://developer.apple.com/app-store/categories/) category.
+
+### Before iOS 14
+
+Let's review the old permission flow first, and then we can go through the new API. I believe this will help in distinguishing the changes a bit better.
+
+<Image
+  alt="limited flow"
+  src={`/images/photo-permission/old-flow.png`}
+  width={800}
+  height={600}
+/>
+
+For simplicity, I am consolidating the [old permission](https://developer.apple.com/documentation/photokit/phauthorizationstatus) flow into two states:
+
+1. Allowed (case: authorized)
+2. Denied (cases: restricted, denied, notDetermined)
+
+As you can see, the implementation was straightforward. If not authorized,
+the app would either request permission or display a page/banner prompting the user to change the permission in the settings.
+
+### Limited case
+
+In the new API introduced with iOS 14, a limited state has been added, allowing users to select specific photos
+they want to share with the app. If a user takes a new photo and wants to share it with the app,
+they will use the new [PHPicker](https://developer.apple.com/documentation/photokit/phpickerviewcontroller) for that purpose.
+Only the selected photos will be shared with the app.
+
+<Image
+  alt="PHPicker"
+  src={`/images/photo-permission/phpicker.png`}
+  width={200}
+  height={300}
+/>
+
+At first glance, this seems straightforward, but there are several nuances that I encountered while migrating to this new API.
+
+<Image
+  alt="limited flow"
+  src={`/images/photo-permission/limited-flow.png`}
+  width={800}
+  height={600}
+/>
+
+To provide some context: our [app](https://apps.apple.com/us/app/flir-one/id875842742) has a dedicated album folder
+where we store all the thermal photos taken by the user. Additionally, we have an in-app local gallery where users can
+view and edit all thermal images captured by our camera.
+
+### Edge cases
+
+- If it is a first time user with `Limited` option, can the app create an album?
+
+App can create album even if it have the limited access.
+The only annoyance in this case is whenever you want to use the [PHAsset](https://developer.apple.com/documentation/photokit/phasset) API
+to create or fetch the assets inside the album, user will see the below system alert which is annoying if it is not in right flow.
+
+<Image
+  alt="PHPicker"
+  src={`/images/photo-permission/select-more-alert.png`}
+  width={200}
+  height={300}
+/>
+
+To mitigate the above issue, calls to the `PHAsset` API should be made carefully, i.e., you cannot
+trigger it in the background or when the user is not expecting it.
+
+- Can a user with the `Limited` option access all the photos of an album to show as local assets inside the app?
+
+The app will have access to the album’s assets that the user has allowed, regardless of whether they
+granted access to all photos or limited photos. Be cautious with the use of the `PHAsset` library to avoid triggering the system alert.
+
+For example, the code below fetches an album by its name. This code should only be executed when the user is trying to access the gallery.
+
+```swift
+
+let fetchOptions = PHFetchOptions()
+fetchOptions.predicate = NSPredicate(format: "title = %@", title)
+let collections = PHAssetCollection.fetchAssetCollections(
+  with: .album, subtype: .any, options: fetchOptions
+)
+
+```
+
+- Can the `PHPicker` be configured to show only thermal images or images from a specific folder instead of the entire library by default?
+
+Yes, this is possible. To achieve this, you need to configure the `PHPicker` appropriately.
+
+```swift
+
+import PhotosUI
+
+func configurePHPickerForAlbum(_ album: PHAssetCollection) -> PHPickerViewController {
+  var configuration = PHPickerConfiguration()
+  configuration.selectionLimit = 0 // Set to 0 for unlimited selection
+  configuration.filter = PHPickerFilter.any(of: [.images, .videos])
+
+  let picker = PHPickerViewController(configuration: configuration)
+  picker.delegate = self // Make sure to set the delegate
+  return picker
+}
+
+
+// Update the delegate to only select from the album you want
+extension PresentingViewController: PHPickerViewControllerDelegate {
+  func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+    picker.dismiss(animated: true, completion: nil)
+
+    // Here album is your custom album
+    let albumAssets = PHAsset.fetchAssets(in: album, options: nil)
+    let albumAssetIdentifiers = albumAssets.objects(at: IndexSet(integersIn: 0..<albumAssets.count)).map { $0.localIdentifier }
+
+    for result in results {
+      if let assetIdentifier = result.assetIdentifier, albumAssetIdentifiers.contains(assetIdentifier) {
+          // Process the selected asset from the album
+      }
+    }
+  }
+}
+
+// Finally call your the PHPicker
+let viewController = PresentingViewController(...)
+PHPhotoLibrary.shared().presentLimitedLibraryPicker(from: viewController)
+
+```
+
+### User experience changes
+
+With the introduction of `Limited` access in iOS 14, you will need to provide users with a way to
+select additional photos. This can be achieved by designing a new screen or simply adding a button with the necessary logic.
+
+<Image
+  alt="PHPicker"
+  src={`/images/photo-permission/add-more-button.png`}
+  width={200}
+  height={300}
+/>
+
+We have added `Add more photos` button in our local gallery to support this. Let me know if you have found some other edges
+cases while implementing in your app.
