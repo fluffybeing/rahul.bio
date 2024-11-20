@@ -33,48 +33,6 @@ function ArrowIcon() {
   );
 }
 
-function ChannelLink({ img, link, name }) {
-  return (
-    <div className="group flex w-full">
-      <a
-        href={link}
-        target="_blank"
-        className="flex w-full items-center justify-between rounded border border-neutral-200 bg-neutral-50 px-3 py-4 dark:border-neutral-700 dark:bg-neutral-800"
-      >
-        <div className="flex items-center space-x-3">
-          <div className="relative h-16">
-            <Image
-              alt={name}
-              src={img}
-              height={64}
-              width={64}
-              sizes="33vw"
-              className="h-16 w-16 rounded-full border border-neutral-200 dark:border-neutral-700"
-              priority
-            />
-            <div className="relative -right-10 -top-6 inline-flex h-6 w-6 items-center rounded-full border border-neutral-200 bg-white p-1 dark:border-neutral-700">
-              <svg width="15" height="11" role="img" aria-label="YouTube logo">
-                <use href="/sprite.svg#youtube" />
-              </svg>
-            </div>
-          </div>
-          <div className="flex flex-col">
-            <p className="font-medium text-neutral-900 dark:text-neutral-100">
-              {name}
-            </p>
-            <Suspense fallback={<p className="h-6" />}>
-              <Subs name={name} />
-            </Suspense>
-          </div>
-        </div>
-        <div className="transform text-neutral-700 transition-transform duration-300 group-hover:-rotate-12 dark:text-neutral-300">
-          <ArrowIcon />
-        </div>
-      </a>
-    </div>
-  );
-}
-
 async function Subs({ name }: { name: string }) {
   noStore();
   let subscribers;
@@ -103,22 +61,21 @@ export default function Page() {
       </h1>
       <div className="prose prose-neutral tracking-tighter dark:prose-invert max-w-[600px]">
         <div>
-          A curious guy living in Stockholm who loves to challenge myself in
-          every possible way. I highly value honesty and strive to be someone
-          people feel safe with, spreading good energy and always being there
-          for those around me.
+          A curious guy who loves to challenge in every possible way. I highly
+          value honesty and strive to be someone people feel safe with,
+          spreading good energy and always being there for those around me.
         </div>
         <div>
           I have a diverse range of interests that I indulge in from time to
-          time, but currently, I am focusing on these activities: 🏃🏽‍➡️ 🚴🏽 ⛷️ ✍🏽
-          📚 📸 🏸. If you share any of these passions, feel free to reach out.
-          Perhaps we can enjoy them together 🤝 or discuss about it.
+          time, but currently these activities: 🏃🏽‍➡️ 🚴🏽 ⛷️ ✍🏽 📚 📸 🏸 are
+          keeping me up. If you share any of these passions, feel free to reach
+          out. Perhaps we can do it together 🤝.
         </div>
 
         <p>
-          I take pleasure in sharing ideas, opinions, and learnings,
-          continuously refining them along the way, which is why I am here.
-          Additionally, I am currently channeling my {` `}
+          I like sharing ideas, opinions, and learnings, continuously refining
+          them along the way, which is why I am here. Additionally, I am
+          currently channeling my {` `}
           <Link href="/photobook">photography</Link> skills to capture moments
           and share them on{' '}
           <Link href="https://www.youtube.com/@RR63stream">YouTube </Link>.
