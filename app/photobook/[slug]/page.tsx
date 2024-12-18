@@ -5,7 +5,7 @@ import { formatDate } from 'app/og/utils';
 import { notFound } from 'next/navigation';
 import React, { Suspense, cache } from 'react';
 import Gallery from '../../components/gallery';
-import ViewCounter from '../../components/view-counter';
+import { ViewCounterComponent } from '../../components/view-counter';
 
 export const metadata = {
   title: 'Photobook',
@@ -47,5 +47,6 @@ let incrementViews = cache(increment);
 async function Views({ slug }: { slug: string }) {
   let views = await getViewsCount();
   incrementViews(slug);
-  return <ViewCounter allViews={views} slug={slug} />;
+  return <ViewCounterComponent allViews={views} slug={slug} />;
 }
+

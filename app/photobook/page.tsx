@@ -4,7 +4,7 @@ import { getViewsCount } from 'app/db/queries';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Suspense } from 'react';
-import ViewCounter from '../components/view-counter';
+import { ViewCounterComponent } from '../components/view-counter';
 
 export const metadata = {
   title: 'photobook',
@@ -65,5 +65,6 @@ export default function PhotoPage() {
 async function Views({ slug }: { slug: string }) {
   let views = await getViewsCount();
 
-  return <ViewCounter allViews={views} slug={slug} />;
+  return <ViewCounterComponent allViews={views} slug={slug} />;
 }
+

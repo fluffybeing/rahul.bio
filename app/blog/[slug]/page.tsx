@@ -1,13 +1,10 @@
 import { CustomMDX } from 'app/components/mdx';
 import { ArticleTags } from 'app/components/tags';
-import { increment } from 'app/db/actions';
 import { getBlogPosts } from 'app/db/blog';
-import { getViewsCount } from 'app/db/queries';
 import { formatDate } from 'app/og/utils';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { Suspense, cache } from 'react';
-import ViewCounter from '../../components/view-counter';
+import { ReadingTimeComponent } from '../../components/view-counter';
 
 export async function generateMetadata({
   params,
@@ -90,14 +87,10 @@ export default async function Blog({ params }) {
       </h1>
       <ArticleTags tags={post.metadata.tags} />
       <div className="flex justify-between items-center mt-2 mb-8 text-sm max-w-[650px]">
-        <Suspense fallback={<p className="h-5" />}>
-          <div className="text-sm text-neutral-600 dark:text-neutral-400">
-            {formatDate(post.metadata.publishedAt)}
-          </div>
-        </Suspense>
-        <Suspense fallback={<p className="h-5" />}>
-          <Views slug={post.slug} />
-        </Suspense>
+        <div className="text-sm text-neutral-600 dark:text-neutral-400">
+          {formatDate(post.metadata.publishedAt)}
+        </div>
+        <ReadingTimeComponent content={post.content} />
       </div>
       <article className="prose prose-quoteless prose-neutral dark:prose-invert">
         <CustomMDX source={post.content} />
@@ -105,14 +98,6 @@ export default async function Blog({ params }) {
       <TenPointSystem point={post.metadata.point} />
     </section>
   );
-}
-
-let incrementViews = cache(increment);
-
-async function Views({ slug }: { slug: string }) {
-  let views = await getViewsCount();
-  incrementViews(slug);
-  return <ViewCounter allViews={views} slug={slug} />;
 }
 
 function TenPointSystem({ point }: { point: string }) {
@@ -136,8 +121,8 @@ function TenPointSystem({ point }: { point: string }) {
         <div className="w-20 my-0 text-center font-bold rounded-lg dark:bg-stone-800">
           <span>{point} / 10</span>
         </div>
-        <div className="flex flex-col justify-between">
-          <div className="my-2">{writingProgressMap.get(point)}</div>
+        <div className="flex flex-col justify-between text-xs">
+          <div className="my-1">{writingProgressMap.get(point)}</div>
           <a
             href="https://nickyoder.com/perfectionism/"
             rel="noopener noreferrer"
@@ -151,3 +136,4 @@ function TenPointSystem({ point }: { point: string }) {
     </div>
   );
 }
+

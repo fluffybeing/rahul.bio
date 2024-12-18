@@ -1,10 +1,7 @@
-import ViewCounter from 'app/components/view-counter';
 import { getViewsCount, getYouTubeSubs } from 'app/db/queries';
 import { PreloadResources } from 'app/preload';
 import { unstable_noStore as noStore } from 'next/cache';
-import Image from 'next/image';
 import Link from 'next/link';
-import { Suspense } from 'react';
 
 function Badge(props) {
   return (
@@ -45,11 +42,6 @@ async function Subs({ name }: { name: string }) {
       {subscribers} subscribers
     </p>
   );
-}
-
-async function Views({ slug }: { slug: string }) {
-  let views = await getViewsCount();
-  return <ViewCounter allViews={views} slug={slug} />;
 }
 
 export default function Page() {
@@ -127,3 +119,4 @@ export default function Page() {
     </section>
   );
 }
+
