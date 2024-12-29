@@ -23,22 +23,18 @@ const nextConfig = {
     },
   },
   transpilePackages: ['next-mdx-remote'],
+
   async redirects() {
-    if (!process.env.POSTGRES_URL) {
-      return [];
-    }
-
-    let redirects = await sql`
-      SELECT source, destination, permanent
-      FROM redirects;
-    `;
-
-    return redirects.map(({ source, destination, permanent }) => ({
-      source,
-      destination,
-      permanent: !!permanent,
-    }));
+    let localRedirects = [
+      {
+        source: '/blog',
+        destination: '/',
+        permanent: true,
+      },
+    ]
+    return localRedirects
   },
+
   headers() {
     return [
       {
