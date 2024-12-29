@@ -1,10 +1,10 @@
-import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata } from 'next';
 import { Inter, Roboto_Mono } from 'next/font/google';
 import { SandpackCSS } from './blog/[slug]/sandpack';
 import { Navbar } from './components/nav';
 import './global.css';
+import Script from 'next/script';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://rahul.bio'),
@@ -72,16 +72,20 @@ export default function RootLayout({
     >
       <head>
         <SandpackCSS />
-        <GoogleTagManager gtmId="GTM-NJ29XH4Q" />
       </head>
       <body className="antialiased max-w-2xl mb-40 flex flex-col md:flex-row mx-4 mt-8 lg:mx-auto text-wrap:pretty">
         <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
           <Navbar />
           {children}
           <SpeedInsights />
+          <Script
+            defer
+            src='https://static.cloudflareinsights.com/beacon.min.js'
+            data-cf-beacon='{"token": "6fc9c11f70b44221b93923cd13a63351"}'
+            strategy="afterInteractive"
+          />
         </main>
       </body>
-      <GoogleAnalytics gaId="G-CNTLYDV06F" />
     </html>
   );
 }

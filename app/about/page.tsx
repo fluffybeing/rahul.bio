@@ -1,4 +1,4 @@
-import { getViewsCount, getYouTubeSubs } from 'app/db/queries';
+import { getYouTubeSubs } from 'app/db/queries';
 import { PreloadResources } from 'app/preload';
 import { unstable_noStore as noStore } from 'next/cache';
 import Link from 'next/link';
@@ -48,10 +48,10 @@ export default function Page() {
   return (
     <section>
       <PreloadResources />
-      <h1 className="font-medium text-2xl mb-8 tracking-tighter">
+      <h1 className="font-medium text-2xl mb-8">
         Hi 👋, I'm Rahul!
       </h1>
-      <div className="prose prose-neutral tracking-tighter dark:prose-invert max-w-[600px]">
+      <div className="prose prose-neutral dark:prose-invert max-w-[600px]">
         <div>
           A curious guy who loves to challenge in every possible way. I highly
           value honesty and strive to be someone people feel safe with,
