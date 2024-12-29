@@ -5,6 +5,7 @@ import { SandpackCSS } from './blog/[slug]/sandpack';
 import { Navbar } from './components/nav';
 import './global.css';
 import Script from 'next/script';
+import { Analytics } from '@vercel/analytics/react';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://rahul.bio'),
@@ -78,6 +79,7 @@ export default function RootLayout({
           <Navbar />
           {children}
           <SpeedInsights />
+          <Analytics />
           <Script
             defer
             src='https://static.cloudflareinsights.com/beacon.min.js'
