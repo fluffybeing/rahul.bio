@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { ReadingTimeComponent } from './components/view-counter';
 
 export const metadata = {
-  title: 'Blog',
+  title: 'RR',
   description: 'Read my thoughts on anything and everything!',
 };
 
