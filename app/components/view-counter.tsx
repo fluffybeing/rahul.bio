@@ -21,13 +21,13 @@ export function ViewCounterComponent({
 
 
 export function ReadingTimeComponent({ content }: { content: string }) {
-  const wordsPerMinute = 150;
+  const wordsPerMinute = 250;
   const wordCount = content.split(/\s+/).length;
   const readTime = Math.ceil(wordCount / wordsPerMinute);
 
   return (
     <p className="text-neutral-600 dark:text-neutral-400">
-      {`${readTime.toLocaleString()} minutes`}
+      {`${readTime.toLocaleString()} mins`}
     </p>
   )
 }
