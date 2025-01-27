@@ -66,7 +66,7 @@ export default function RootLayout({
     <html
       lang="en"
       className={cx(
-        'text-black bg-white dark:text-emerald-100 dark:bg-zinc-950',
+        'text-black bg-white dark:text-emerald-200 dark:bg-zinc-950',
         inter.variable,
         robotoMono.variable
       )}
@@ -80,12 +80,6 @@ export default function RootLayout({
           {children}
           <SpeedInsights />
           <Analytics />
-          <Script
-            defer
-            src='https://static.cloudflareinsights.com/beacon.min.js'
-            data-cf-beacon='{"token": "6fc9c11f70b44221b93923cd13a63351"}'
-            strategy="afterInteractive"
-          />
         </main>
       </body>
     </html>

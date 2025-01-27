@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 ::selection {
-  background-color: #6ee7b7;
+  background-color: #B6EADA;
   color: #fefefe;
 }
 
@@ -16,13 +16,13 @@
   --sh-comment: #a19595;
   --sh-jsxliterals: #6266d1;
   --sh-property: #e25a1c;
-  --sh-entity: #e25a1c;
+  --sh-entity: #F2EFE7;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --sh-class: #4c97f8;
-    --sh-identifier: white;
+    --sh-class: #B6EADA;
+    --sh-identifier: #5B8FB9;
     --sh-keyword: #f47067;
     --sh-string: #0fa295;
   }
@@ -49,12 +49,16 @@ html {
   @apply visible;
 }
 
+.prose p {
+  @apply text-stone-300
+}
+
 .prose a {
   @apply transition-all text-emerald-200 dark:decoration-emerald-300 underline-offset-2 decoration-[0.1em];
 }
 
 .prose .anchor:after {
-  @apply text-neutral-300 dark:text-emerald-300;
+  @apply text-emerald-300 dark:text-emerald-300;
   content: '#';
 }
 
@@ -88,11 +92,11 @@ html {
 .prose h2,
 h3,
 h4 {
-  @apply font-medium tracking-tighter !important;
+  @apply text-emerald-200 font-medium tracking-tighter !important;
 }
 
 .prose strong {
-  @apply font-medium;
+  @apply font-medium text-emerald-200;
 }
 
 .prose > :first-child {
@@ -136,4 +140,15 @@ table {
 
 .title {
   text-wrap: pretty;
+}
+
+.tag {
+  display: inline-block;
+  border-radius: 3px;
+  padding: .2em .5em .3em;
+  border-radius: 2px;
+  background: #1A1A1D;
+  color: #B6EADA;
+  font-weight: 500;
+  margin: .25em .1em
 }

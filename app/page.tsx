@@ -32,7 +32,7 @@ export default function BlogPage() {
             className="flex flex-col space-y-1 mb-4"
             href={`/blog/${post.slug}`}
           >
-            <div className="flex flex-col text-neutral-900 dark:text-neutral-100 max-w-[540px]">
+            <div className="flex flex-col text-neutral-900 dark:text-stone-300 max-w-[540px]">
               <div className="text-wrap:pretty">{post.metadata.title}</div>
               <ArticleTags tags={post.metadata.tags} />
             </div>
