@@ -4,8 +4,8 @@ import { getBlogPosts } from 'app/db/blog';
 import { formatDate } from 'app/og/utils';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { ReadingTimeComponent } from '../../components/view-counter';
-import TenPointSystem  from '../../components/tenpointsystem';
+import { ReadingTimeComponent } from 'app/components/view-counter';
+import TenPointSystem  from 'app/components/tenpointsystem';
 
 
 export async function generateMetadata({

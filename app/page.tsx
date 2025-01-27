@@ -2,7 +2,7 @@ import { ArticleTags } from 'app/components/tags';
 import { getBlogPosts } from 'app/db/blog';
 import { formatDate } from 'app/og/utils';
 import Link from 'next/link';
-import { ReadingTimeComponent } from './components/view-counter';
+import { ReadingTimeComponent } from 'app/components/view-counter';
 
 export const metadata = {
   title: 'RR',
