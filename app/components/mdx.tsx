@@ -5,6 +5,15 @@ import React from 'react';
 import { highlight } from 'sugar-high';
 import { LiveCode } from './sandpack';
 import { TweetComponent } from './tweet';
+import remarkGfm from 'remark-gfm';
+
+export const MDXOptions = {
+	mdxOptions: {
+		remarkPlugins: [
+			remarkGfm,
+		],
+	},
+};
 
 function Table({ data }) {
   let headers = data.headers.map((header, index) => (
@@ -174,6 +183,7 @@ export function CustomMDX(props) {
     <MDXRemote
       {...props}
       components={{ ...components, ...(props.components || {}) }}
+      options={MDXOptions}
     />
   );
 }
