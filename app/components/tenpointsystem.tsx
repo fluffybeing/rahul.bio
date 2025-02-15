@@ -15,12 +15,12 @@ function TenPointSystem({ point }: { point: string }) {
   ]);
 
   return (
-    <div className="my-8 w-full group text-sm rounded-md px-4 py-2 dark:bg-stone-900">
+    <div className="my-8 w-full group rounded-md px-4 py-2 dark:bg-stone-900">
       <div className="flex flex-row items-center space-x-3 text-gray-300">
         <div className="w-20 my-0 text-center font-bold rounded-lg dark:bg-stone-800">
           <span>{point} / 10</span>
         </div>
-        <div className="flex flex-col justify-between text-xs">
+        <div className="flex flex-col justify-between text-sm">
           <div className="my-1">{writingProgressMap.get(point)}</div>
           <a
             href="https://nickyoder.com/perfectionism/"

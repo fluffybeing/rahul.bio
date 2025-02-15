@@ -152,3 +152,7 @@ table {
   font-weight: 500;
   margin: .25em .1em
 }
+
+.prose .footnotes {
+  @apply text-sm;
+}

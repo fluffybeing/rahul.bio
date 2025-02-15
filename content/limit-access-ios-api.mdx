@@ -3,7 +3,7 @@ title: 'Hidden quirks in iOS PhotoKit limit access'
 publishedAt: '2024-10-31'
 summary: 'Exploring all edge cases of limit access API'
 tags: iOS
-point: 8
+point: 9
 ---
 
 Apple introduced [limited access](https://developer.apple.com/documentation/photokit/delivering_an_enhanced_privacy_experience_in_your_photos_app) for the photo library in iOS 14,
@@ -136,7 +136,7 @@ PHPhotoLibrary.shared().presentLimitedLibraryPicker(from: viewController)
 
 ### User experience changes
 
-With the introduction of `Limited` access in iOS 14, you will need to provide users with a way to
+With the introduction of **Limited access** in iOS 14, you will need to provide users with a way to
 select additional photos. This can be achieved by designing a new screen or simply adding a button with the necessary logic.
 
 <Image
@@ -146,5 +146,5 @@ select additional photos. This can be achieved by designing a new screen or simp
   height={300}
 />
 
-We have added `Add more photos` button in our local gallery to support this. Let me know if you have found some other edges
+We have added **Add more photos** button in our local gallery to support this. Let me know if you have found some other edges
 cases while implementing in your app.

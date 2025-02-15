@@ -57,8 +57,13 @@ function CustomLink(props) {
 
 function RoundedImage(props) {
   return (
-    <div className="flex justify-center">
+    <div className="flex flex-col items-center">
       <Image alt={props.alt} className="rounded-lg" {...props} />
+      {props.caption && (
+        <figcaption className="mt-2 text-center text-sm text-gray-600 dark:text-gray-400">
+          {props.caption}
+        </figcaption>
+      )}
     </div>
   );
 }
